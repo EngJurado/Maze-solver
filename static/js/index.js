@@ -32,7 +32,10 @@ document.getElementById('sendMap').addEventListener('click', function() {
         },
         body: JSON.stringify({map: formattedMap}),
     })
-    .then(response => response.json())
-    .then(data => console.log('Success:', data))
-    .catch((error) => console.error('Error:', error));
+    .then(response => response.text())
+    .then(html => {
+        // Replace the body's innerHTML with the received HTML or append it as needed
+        document.body.innerHTML = html;
+    })
+    .catch(error => console.error('Error:', error));
 });

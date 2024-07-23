@@ -44,6 +44,8 @@ Modify the maze by clicking on it and when you have a starting and ending point,
 
 This project is built with:
 - Flask==3.0.3
+- Bootstrap==5.3.3
+- Catppuccin Palette
 - Additional dependencies:
   - asarPy==1.0.1
   - blinker==1.8.2

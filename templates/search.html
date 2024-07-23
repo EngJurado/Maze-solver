@@ -1,21 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive Map</title>
-    <link href="{{ url_for('static', filename = 'css/index.css') }}" rel="stylesheet">
+{% extends "base.html" %}
+
+{% block styles %}     
     <link href="{{ url_for('static', filename = 'css/search.css') }}" rel="stylesheet">
-</head>
-<body>
-    <h1>Solution Map</h1>
-    <div class="grid" id="grid">
-        {% for row in map %}
-            {% for cell in row %}
-                <div class="cell {% if cell == 0 %}path{% elif cell == 1 %}wall{% elif cell == 2 %}entrance{% elif cell == 3 %}exit{% elif cell == 5 %}search{% endif %}"
-                     data-row="{{ loop.index0 }}" data-col="{{ loop.index0 }}" data-type="{{ cell }}"></div>
-            {% endfor %}
-        {% endfor %}
-    </div>
-</body>
-</html> 
+{% endblock %}

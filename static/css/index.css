@@ -1,23 +1,5 @@
-.grid {
-    display: grid;
-    grid-template-columns: repeat(10, 40px);
-    grid-template-rows: repeat(10, 40px);
-}
-.cell {
-    width: 40px;
-    height: 40px;
-    border: 1px solid #ccc;
-    cursor: pointer;
-}
-.wall {
-    background-color: black;
-}
-.path {
-    background-color: white;
-}
-.entrance {
-    background-color: green;
-}
-.exit {
-    background-color: red;
+.custom-btn {
+    background-color: #181825;
+    border-color: #181825; 
+    color: #cdd6f4; 
 }

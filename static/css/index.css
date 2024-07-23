@@ -1,4 +1,4 @@
-.custom-btn {
+.custom-btn, .custom-btn:active, .custom-btn:hover {
     background-color: #181825;
     border-color: #181825; 
     color: #cdd6f4; 

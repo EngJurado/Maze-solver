@@ -1,35 +1,18 @@
-.d-flex {
-    height: 100vh;
-}
-body {
+body{
     background-color: #1e1e2e;
 }
+
+h1{
+    font-weight: bold;
+    color: #cdd6f4;
+}
+
 .card {
     background-color: #181825;
 }
-.card-title {
-    color: #cdd6f4;
-}
-.grid {
-    display: grid;
-    grid-template-columns: repeat(10, 40px);
-    grid-template-rows: repeat(10, 40px);
-}
-.cell {
-    width: 40px;
-    height: 40px;
-    border: 1px solid #cdd6f4;
-    cursor: pointer;
-}
-.wall {
-    background-color: #11111b;
-}
-.path {
-    background-color: #cdd6f4;
-}
-.entrance {
-    background-color: #89b4fa;
-}
-.exit {
-    background-color: #a6e3a1;
+
+@media screen and (min-width: 992px) {
+    .d-flex {
+        height: 100vh;
+    }
 }

@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block meta %}
+    <title>Maze Solver</title>
+    <meta name="description" content="This project is an implementation of astar to solve mazes using flask.">
+    <link href="{{ url_for('static', filename = 'css/map.css') }}" rel="stylesheet">
+    {% block styles %}{% endblock %}
+{% endblock %}
+
+{% block content %}  
+    <h1>Interactive Map</h1>
+    <div class="grid" id="grid">
+        {% for row in map %}
+            {% for cell in row %}
+            <div class="cell {% if cell == 0 %}path{% elif cell == 1 %}wall{% elif cell == 2 %}entrance{% elif cell == 3 %}exit{% elif cell == 5 %}search{% endif %}" 
+                data-row="{{ loop.index0 }}" 
+                data-col="{{ loop.index0 }}" 
+                data-type="{{ cell }}">
+            </div>
+            {% endfor %}
+        {% endfor %}
+    </div>
+    {% block scripts %}{% endblock %}
+{% endblock %} 

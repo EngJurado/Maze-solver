@@ -3,6 +3,10 @@ from models.astar import a_star_search
 
 app = Flask(__name__)
 
+@app.errorhandler(404)
+def not_found(error):
+    return render_template('404.html')
+
 @app.route('/')
 def index():
     # Define the initial map (0: path, 1: wall, 2: entrance, 3: exit)

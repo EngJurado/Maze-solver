@@ -1,31 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maze Solver</title>
-    <meta name="description" content="This project is an implementation of astar to solve mazes using flask.">
+<html lang="en"> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link href="{{ url_for('static', filename = 'fontawesome/css/all.min.css') }}" rel="stylesheet">
     <link href="{{ url_for('static', filename = 'css/bootstrap.min.css') }}" rel="stylesheet">
-    <link href="{{ url_for('static', filename = 'css/base.css') }}" rel="stylesheet">
-    {% block styles %}{% endblock %}
+    {% block meta %}{% endblock %}
+    <link rel="icon" type="/image/png" href="{{ url_for('static', filename = 'img/favicon.webp') }}">
+    <link href="{{ url_for('static', filename = 'css/base.css') }}" rel="stylesheet"> 
 </head>
 <body>
-    <div class="d-flex justify-content-center align-items-center">
-        <div class="card">
-            <h1 class="card-title text-center">Interactive Map</h1>
-            <div class="grid" id="grid">
-                {% for row in map %}
-                    {% for cell in row %}
-                    <div class="cell {% if cell == 0 %}path{% elif cell == 1 %}wall{% elif cell == 2 %}entrance{% elif cell == 3 %}exit{% elif cell == 5 %}search{% endif %}" 
-                        data-row="{{ loop.index0 }}" 
-                        data-col="{{ loop.index0 }}" 
-                        data-type="{{ cell }}">
-                    </div>
-                    {% endfor %}
-                {% endfor %}
+    <div class="row justify-content-center">
+        <div class="col-12 col-lg-4">
+            <div class="d-flex justify-content-center align-items-center">
+                <div class="card text-center m-2 p-2">
+                    {% block content %}{% endblock %}
+                </div>
             </div>
-            {% block scripts %}{% endblock %}
         </div>
     </div>
-</body>
-</html> 
+</html>

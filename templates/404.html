@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block meta %}
+    <title>Error 404</title>
+    <meta name="description" content="This page could not be found">
+    <link href="{{ url_for('static', filename = 'css/404.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}  
+    <a href="{{ url_for('index') }}">
+        <h1><span class="e404">404</span><br> Page Not Found</h1>
+    </a>
+{% endblock %}
